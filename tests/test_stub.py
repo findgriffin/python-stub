@@ -6,14 +6,14 @@ class TestStub(unittest.TestCase):
 
     def test_parser(self):
         # Given
-        input = ["Davo"]
+        input = ["--name", "Davo"]
 
         # When
         result = stub.setup(input)
 
         # Then
         self.assertFalse(result.verbose)
-        self.assertEqual(result.name, input[0])
+        self.assertEqual(result.name, input[1])
 
     def test_no_name(self):
         # When
