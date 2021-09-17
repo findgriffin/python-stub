@@ -16,7 +16,6 @@ test:
 	coverage report --fail-under=90
 
 deploy:	build git-clean
-	echo "Deploying with a `git push`"
 	git push
 	
 git-clean:
