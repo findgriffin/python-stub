@@ -4,12 +4,27 @@ from stub import stub
 
 class TestStub(unittest.TestCase):
 
-    def test_true(self):
+    def test_parser(self):
         # Given
-        instance = stub.Stub()
+        input = ["Davo"]
 
         # When
-        result = instance.hello("Davo")
+        result = stub.setup(input)
+
+        # Then
+        self.assertFalse(result.verbose)
+        self.assertEqual(result.name, input[0])
+
+    def test_no_name(self):
+        # When
+        result = stub.run()
+
+        # Then
+        self.assertEqual(result, "Hello, world!")
+
+    def test_name(self):
+        # When
+        result = stub.run("Davo")
 
         # Then
         self.assertEqual(result, "Hello, Davo!")
