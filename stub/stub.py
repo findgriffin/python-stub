@@ -5,7 +5,7 @@ import argparse
 
 def setup(argv) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="This is a stub Python 3 project.")
+        description="This is a Python 3 project.")
     parser.add_argument("--name", type=str, required=False,
                         help="Your name, for example 'Margaret'.")
     parser.add_argument("-v", "--verbose",  action="store_true",
